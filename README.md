@@ -42,6 +42,8 @@ ai-link-analysis/
 │       └── validators.py        # URL check + SSRF protection
 ├── tests/
 │   └── test_link_analysis.py    # Tests run without internet or API keys
+├── Dockerfile                   # Render deployment with Playwright and Chromium
+├── .dockerignore                # Keeps local secrets and files out of the image
 ├── start.bat                    # Windows setup, test, and launch helper
 ├── screenshot/                  # Swagger, API, validation, and test evidence
 │   └── response_1794988467405.json # Full successful Swagger response
@@ -135,6 +137,17 @@ Defaults and example endpoint values are provided in `.env.example`.
 ### Vercel deployment
 
 Vercel detects the FastAPI app in `app/main.py` when the repository is imported; no Vercel CLI or custom routing file is needed. Add the LLM provider settings and API key through the Vercel project's **Settings → Environment Variables**. Set `JS_RENDER_ENABLED=false`: Vercel's Python runtime does not include the system libraries required by Playwright's browser driver. Server-rendered sites continue to work; JavaScript-only pages with too little static text return a structured `not_enough_content` error. Local development keeps rendering enabled by default.
+
+### Render deployment with Playwright
+
+The root `Dockerfile` uses the official Playwright Python image so Chromium and its Linux dependencies are available at runtime. The Playwright Python package is pinned to the same version as the image. `.dockerignore` excludes `.env` and local development files from the build context.
+
+1. Push the `Dockerfile`, `.dockerignore`, and updated `requirements.txt` to the GitHub branch connected to Render.
+2. In Render, open the service's **Settings → Build & Deploy → Source → Edit**, select **Docker**, and keep the repository root as the Dockerfile directory. Leave Build Command and Start Command blank; the Dockerfile starts Uvicorn using Render's `PORT`.
+3. Set `LLM_PROVIDER=gemini`, `LLM_MODEL=gemini-3.8-flash`, `GEMINI_API_KEY`, and `GEMINI_API_URL_TEMPLATE=https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent` in the service's environment variables. Set `JS_RENDER_ENABLED=true`.
+4. Redeploy, then test `/health`, `/docs`, and `POST /link-analysis`.
+
+The Free instance has limited CPU and memory and can spin down when idle; Chromium may be slow or run out of memory. For user-submitted URLs, keep Chromium's sandbox enabled and do not add `--no-sandbox` as a workaround.
 
 ```bash
 # 5. Start the server
