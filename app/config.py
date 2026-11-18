@@ -60,6 +60,10 @@ class Settings:
 
         self.FETCH_TIMEOUT_SECONDS = _float("FETCH_TIMEOUT_SECONDS", 15.0)
         self.JS_RENDER_TIMEOUT_SECONDS = _float("JS_RENDER_TIMEOUT_SECONDS", 20.0)
+        default_js_render = "false" if os.getenv("VERCEL") == "1" else "true"
+        self.JS_RENDER_ENABLED = os.getenv("JS_RENDER_ENABLED", default_js_render).strip().lower() in {
+            "1", "true", "yes", "on"
+        }
         self.LLM_TIMEOUT_SECONDS = _float("LLM_TIMEOUT_SECONDS", 90.0)
         self.MAX_PAGE_BYTES = _int("MAX_PAGE_BYTES", 3_000_000)
         self.MAX_REDIRECTS = _int("MAX_REDIRECTS", 5)

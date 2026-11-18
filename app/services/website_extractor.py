@@ -298,7 +298,7 @@ async def _try_page(client: httpx.AsyncClient, url: str) -> Optional[PageContent
     try:
         final_url, html = await fetch_html(client, url)
         page = parse_page(html, final_url)
-        if _readable_chars(page) < MIN_READABLE_CHARS:
+        if settings.JS_RENDER_ENABLED and _readable_chars(page) < MIN_READABLE_CHARS:
             final_url, html = await render_page(url)
             page = parse_page(html, final_url)
         return page
@@ -314,7 +314,7 @@ async def extract_website(url: str) -> WebsiteContent:
     async with httpx.AsyncClient(headers=headers, timeout=timeout, follow_redirects=False) as client:
         final_url, html = await fetch_html(client, url)
         home = parse_page(html, final_url)
-        if _readable_chars(home) < MIN_READABLE_CHARS:
+        if settings.JS_RENDER_ENABLED and _readable_chars(home) < MIN_READABLE_CHARS:
             final_url, html = await render_page(final_url)
             home = parse_page(html, final_url)
         extra = pick_extra_pages(home.internal_links, final_url, settings.MAX_EXTRA_PAGES)
@@ -323,6 +323,11 @@ async def extract_website(url: str) -> WebsiteContent:
     pages = [home] + [p for p in extra_pages if p and p.text]
     readable = sum(len(p.text) for p in pages) + len(home.meta_description)
     if readable < MIN_READABLE_CHARS:
+        if not settings.JS_RENDER_ENABLED:
+            raise ContentExtractionError(
+                "Website has very little readable text. JavaScript rendering is disabled in this "
+                "runtime; try a page with server-rendered content."
+            )
         raise ContentExtractionError(
             "Website has very little readable text. It may load content with JavaScript (JS) "
             "or block bots, so it cannot be analyzed reliably."

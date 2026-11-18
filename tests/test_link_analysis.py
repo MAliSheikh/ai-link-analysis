@@ -6,7 +6,7 @@ import json
 import pytest
 from fastapi.testclient import TestClient
 
-from app.config import estimate_cost_usd, settings
+from app.config import Settings, estimate_cost_usd, settings
 from app.main import app, get_analysis_service
 from app.services.analysis_service import AnalysisService
 from app.services.llm_service import LLMConfigError, LLMResponse, build_client, extract_json
@@ -17,7 +17,14 @@ from app.services.website_extractor import (
     parse_page,
     pick_extra_pages,
 )
-from app.utils.validators import BlockedURLError, InvalidURLError, is_public_ip, normalize_url, validate_public_url
+from app.utils.validators import (
+    BlockedURLError,
+    ContentExtractionError,
+    InvalidURLError,
+    is_public_ip,
+    normalize_url,
+    validate_public_url,
+)
 
 SAMPLE_LLM_OUTPUT = {
     "brand": {"name": "ABC Technologies", "category": "Web Development", "summary": "Builds websites."},
@@ -113,6 +120,13 @@ def test_gemini_38_paid_price_estimate():
     assert estimate_cost_usd("gemini-3.8-flash", 1946, 3873) == pytest.approx(0.015983)
 
 
+def test_js_rendering_defaults_to_off_on_vercel(monkeypatch):
+    monkeypatch.delenv("JS_RENDER_ENABLED", raising=False)
+    monkeypatch.setenv("VERCEL", "1")
+
+    assert Settings().JS_RENDER_ENABLED is False
+
+
 # ---------- URL validation and SSRF ----------
 def test_normalize_adds_https():
     assert normalize_url("example.com") == "https://example.com/"
@@ -171,6 +185,7 @@ def test_parse_page_removes_noise_and_finds_links():
 def test_sparse_static_page_uses_rendered_html(monkeypatch):
     from app.services import website_extractor
 
+    monkeypatch.setattr(settings, "JS_RENDER_ENABLED", True)
     static_html = "<html><body><main><div id='app'></div></main></body></html>"
     rendered_html = (
         "<html><head><title>Rendered business</title></head><body><main>"
@@ -195,6 +210,24 @@ def test_sparse_static_page_uses_rendered_html(monkeypatch):
     assert rendered_urls == ["https://dynamic.example/"]
     assert website.home.title == "Rendered business"
     assert "Business services and products." in website.home.text
+
+
+def test_sparse_static_page_fails_gracefully_when_rendering_disabled(monkeypatch):
+    from app.services import website_extractor
+
+    async def fake_fetch_html(client, url):
+        return url, "<html><body><main><div id='app'></div></main></body></html>"
+
+    async def unexpected_render(url):
+        pytest.fail("Browser rendering should be disabled")
+
+    monkeypatch.setattr(settings, "JS_RENDER_ENABLED", False)
+    monkeypatch.setattr(settings, "MAX_EXTRA_PAGES", 0)
+    monkeypatch.setattr(website_extractor, "fetch_html", fake_fetch_html)
+    monkeypatch.setattr(website_extractor, "render_page", unexpected_render)
+
+    with pytest.raises(ContentExtractionError, match="JavaScript rendering is disabled"):
+        asyncio.run(extract_website("https://dynamic.example/"))
 
 
 # ---------- API ----------

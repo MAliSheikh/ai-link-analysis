@@ -120,6 +120,7 @@ Configure the provider and optional fallback in `.env`. A provider's API key is 
 | `GEMINI_THINKING_BUDGET`    | Gemini 2.5 thinking budget; `0` disables thinking                |
 | `OPENAI_REASONING_EFFORT`   | Optional OpenAI reasoning effort                                 |
 | `FETCH_TIMEOUT_SECONDS`     | Website request timeout                                          |
+| `JS_RENDER_ENABLED`         | Enable Playwright rendering; defaults off on Vercel               |
 | `JS_RENDER_TIMEOUT_SECONDS` | Maximum time allowed for browser rendering of a JavaScript page  |
 | `MAX_PAGE_BYTES`            | Maximum bytes read from each page                                |
 | `MAX_REDIRECTS`             | Maximum website redirects to follow                              |
@@ -130,6 +131,10 @@ Configure the provider and optional fallback in `.env`. A provider's API key is 
 | `CACHE_TTL_SECONDS`         | Analysis cache lifetime; `0` disables caching                    |
 
 Defaults and example endpoint values are provided in `.env.example`.
+
+### Vercel deployment
+
+Vercel detects the FastAPI app in `app/main.py` when the repository is imported; no Vercel CLI or custom routing file is needed. Add the LLM provider settings and API key through the Vercel project's **Settings → Environment Variables**. Set `JS_RENDER_ENABLED=false`: Vercel's Python runtime does not include the system libraries required by Playwright's browser driver. Server-rendered sites continue to work; JavaScript-only pages with too little static text return a structured `not_enough_content` error. Local development keeps rendering enabled by default.
 
 ```bash
 # 5. Start the server
@@ -414,7 +419,7 @@ Claude Haiku 5.5 is a lower-cost candidate at this request size, but it is not c
 
 ## 8. Other Limits
 
-- Some highly interactive sites may still return `not_enough_content` if they require login, block automated browsers, or render content only after user interaction. JavaScript rendering requires the Chromium browser installed by `start.bat` or `python -m playwright install chromium`.
+- Some highly interactive sites may still return `not_enough_content` if they require login, block automated browsers, or render content only after user interaction. Local JavaScript rendering requires the Chromium browser installed by `start.bat` or `python -m playwright install chromium`; it is disabled on Vercel because the serverless runtime lacks the system libraries required by Playwright.
 - Some sites block bots (Cloudflare, HTTP 403) - we return a clear error.
 - Competitors come from the LLM's knowledge, not live data. A search API (for example SerpAPI or Google Custom Search) could verify them.
 
