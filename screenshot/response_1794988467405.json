@@ -1,0 +1,340 @@
+{
+  "success": true,
+  "website": "https://scenvora.com/",
+  "brand": {
+    "name": "Scenvora",
+    "category": "Fragrance & Perfumery",
+    "summary": "Scenvora is a boutique Pakistani fragrance brand specializing in small-batch, artisanal eau de parfum crafted with layered top, heart, and base notes. Offering individual scents and discovery tester kits, the brand provides accessible luxury with nationwide cash-on-delivery service."
+  },
+  "analysis": {
+    "competitor_analysis": {
+      "brand_overview": "Scenvora produces small-batch Eau de Parfum in Pakistan, emphasizing structured scent evolutions across floral, woody, citrus, and chypre families, paired with low-risk sampler options.",
+      "main_category": "Artisanal Fragrance E-Commerce",
+      "products_and_services": [
+        "Small-batch Eau de Parfum",
+        "Signature Tester Discovery Kits",
+        "Floral and Fruity Fragrances",
+        "Woody and Aromatic Fragrances",
+        "Chypre and Warm Floral Fragrances",
+        "Nationwide Cash on Delivery"
+      ],
+      "competitors": [
+        {
+          "name": "Scents'N Stories",
+          "website": "https://scentsnstories.pk",
+          "main_service": "Affordable impressions and original perfumes",
+          "target_market": "Mass and middle-income fragrance consumers in Pakistan",
+          "strengths": [
+            "High brand awareness",
+            "Extensive catalog of impression fragrances"
+          ],
+          "weaknesses_or_gaps": [
+            "Heavy reliance on imitation perfumes rather than distinctive original formulations"
+          ],
+          "source": "ai_suggestion"
+        },
+        {
+          "name": "J. Fragrances",
+          "website": "https://junaidjamshed.com",
+          "main_service": "Traditional and modern premium perfumes and attars",
+          "target_market": "Broad retail market across Pakistan and overseas diaspora",
+          "strengths": [
+            "Massive nationwide physical retail footprint",
+            "Strong heritage brand equity"
+          ],
+          "weaknesses_or_gaps": [
+            "Higher price points",
+            "Less focus on intimate direct-to-consumer discovery kits"
+          ],
+          "source": "ai_suggestion"
+        },
+        {
+          "name": "Rawaha",
+          "website": "https://rawaha.net",
+          "main_service": "Artisan and impression fragrances",
+          "target_market": "Enthusiasts seeking long-lasting niche scents in Pakistan",
+          "strengths": [
+            "Reputation for projection and longevity",
+            "Active enthusiast community"
+          ],
+          "weaknesses_or_gaps": [
+            "Minimal emphasis on aesthetic brand storytelling and modern experiential packaging"
+          ],
+          "source": "ai_suggestion"
+        }
+      ],
+      "competitive_advantages": [
+        "Small-batch, in-house studio formulation",
+        "Low-friction fragrance sampling via 5x5ml Signature Tester Kit",
+        "Clear educational olfactory breakdown (top, heart, and base notes)",
+        "Accessible pricing under PKR 3,000 with cash on delivery"
+      ],
+      "opportunities": [
+        "Introduce full bottle sizing options and bespoke gift packaging",
+        "Create interactive online scent quizzes to simplify blind buying",
+        "Expand marketing on visual scent storytelling through video content"
+      ],
+      "comparison_table": [
+        {
+          "aspect": "Brand Name",
+          "your_brand": "Scenvora",
+          "competitors": {
+            "Scents'N Stories": "Scents'N Stories",
+            "J. Fragrances": "J. Fragrances",
+            "Rawaha": "Rawaha"
+          }
+        },
+        {
+          "aspect": "Main Service",
+          "your_brand": "Small-batch Eau de Parfum & Tester Kits",
+          "competitors": {
+            "Scents'N Stories": "Perfume impressions & roll-ons",
+            "J. Fragrances": "Retail perfumes & traditional attars",
+            "Rawaha": "Niche fragrance impressions"
+          }
+        },
+        {
+          "aspect": "Target Market",
+          "your_brand": "Modern online fragrance shoppers in Pakistan",
+          "competitors": {
+            "Scents'N Stories": "Value-focused youth and digital shoppers",
+            "J. Fragrances": "Mass demographic across age brackets",
+            "Rawaha": "Fragrance hobbyists and enthusiasts"
+          }
+        },
+        {
+          "aspect": "Key Strength",
+          "your_brand": "Artisanal storytelling and accessible discovery packs",
+          "competitors": {
+            "Scents'N Stories": "Vast product variety and aggressive digital ads",
+            "J. Fragrances": "Omnichannel distribution and high brand trust",
+            "Rawaha": "Concentrated formulations and longevity"
+          }
+        },
+        {
+          "aspect": "Opportunity",
+          "your_brand": "Establish market share through niche lifestyle branding",
+          "competitors": {
+            "Scents'N Stories": "Expand into bespoke proprietary luxury lines",
+            "J. Fragrances": "Modernize digital sampling kits for young shoppers",
+            "Rawaha": "Refine packaging aesthetics and modern UX"
+          }
+        }
+      ],
+      "note": "Competitors are AI-generated suggestions based on the website content and the model's general knowledge. They are not verified with live market data. Please check them before use."
+    },
+    "target_search_queries": [
+      {
+        "query": "best long lasting perfume in Pakistan",
+        "platforms": [
+          "Google"
+        ],
+        "intent": "Commercial",
+        "business_relevance": "Directly matches Scenvora's value proposition of long-lasting Eau de Parfum notes.",
+        "target_audience": "Shoppers seeking quality perfumes with lasting performance."
+      },
+      {
+        "query": "perfume tester kit online Pakistan",
+        "platforms": [
+          "Google"
+        ],
+        "intent": "Transactional",
+        "business_relevance": "Captures high-intent buyers looking to sample scents before purchasing full bottles.",
+        "target_audience": "Cost-conscious shoppers wanting mini discovery sets."
+      },
+      {
+        "query": "artisan small batch eau de parfum",
+        "platforms": [
+          "Instagram",
+          "Google"
+        ],
+        "intent": "Informational / Commercial",
+        "business_relevance": "Targets niche fragrance lovers interested in unique boutique scent compositions.",
+        "target_audience": "Fragrance connoisseurs and discerning luxury buyers."
+      },
+      {
+        "query": "affordable luxury perfumes for women Pakistan",
+        "platforms": [
+          "Google",
+          "Facebook"
+        ],
+        "intent": "Commercial",
+        "business_relevance": "Connects Scenvora's floral lines (Lady Diana, Miss Queen) to female shoppers.",
+        "target_audience": "Young professional women and gift shoppers."
+      },
+      {
+        "query": "cash on delivery perfume Pakistan",
+        "platforms": [
+          "Google",
+          "Facebook"
+        ],
+        "intent": "Transactional",
+        "business_relevance": "Leverages Scenvora's COD payment service to attract security-conscious online buyers.",
+        "target_audience": "E-commerce shoppers preferring payment upon delivery."
+      }
+    ],
+    "seo_improvements": {
+      "current_title": "Scenvora — Luxury Perfume",
+      "current_meta_description": "Discover Scenvora perfumes in an immersive 3D experience.",
+      "primary_keyword": "luxury perfume Pakistan",
+      "secondary_keywords": [
+        "eau de parfum online",
+        "perfume tester kit",
+        "long lasting fragrances",
+        "artisan perfumes"
+      ],
+      "long_tail_keywords": [
+        "buy perfume tester kit online in Pakistan",
+        "small batch eau de parfum cash on delivery",
+        "best long lasting floral perfumes for women",
+        "woody aromatic men's fragrance Pakistan"
+      ],
+      "business_keywords": [
+        "Scenvora perfume",
+        "Scenvora tester kit",
+        "handcrafted fragrance studio",
+        "boutique perfumery Pakistan"
+      ],
+      "recommended_title": "Luxury Perfume in Pakistan | Scenvora Fragrances",
+      "title_structure": "Primary Keyword | Brand Name",
+      "meta_description": "Explore Scenvora luxury perfumes in Pakistan. Discover artisanal small-batch Eau de Parfum and discovery sampler kits with convenient cash on delivery.",
+      "supporting_content": [
+        {
+          "type": "FAQ",
+          "title": "Fragrance Discovery & Delivery FAQ",
+          "reason": "Answers questions regarding perfume longevity, return policies, and nationwide cash on delivery."
+        },
+        {
+          "type": "Blog topic",
+          "title": "Understanding Perfume Notes: Top, Heart, and Base Explained",
+          "reason": "Reinforces Scenvora's 'story in three acts' concept and captures top-of-funnel informational queries."
+        },
+        {
+          "type": "Service landing page",
+          "title": "Fragrance Discovery Tester Kits",
+          "reason": "Optimizes high-intent search traffic specifically looking for affordable fragrance sampling sets."
+        },
+        {
+          "type": "Industry page",
+          "title": "The Art of Small-Batch Perfumery",
+          "reason": "Highlights the studio craft and authenticity differentiator against mass-market clone brands."
+        }
+      ]
+    },
+    "top_services": [
+      {
+        "name": "Handcrafted Eau de Parfum",
+        "description": "Small-batch signature fragrances structured with distinct top, heart, and base notes for enduring longevity.",
+        "target_industry": "Personal Care & Beauty",
+        "target_customer": "Individuals seeking long-lasting personal scents",
+        "main_benefit": "Complex olfactory evolution that lasts throughout the day",
+        "source": "website"
+      },
+      {
+        "name": "Signature Tester Discovery Kit",
+        "description": "A curated collection of five 5ml mini perfumes allowing customers to test and wear scents before full-size commitment.",
+        "target_industry": "Personal Care & Beauty",
+        "target_customer": "First-time buyers, travelers, and gift seekers",
+        "main_benefit": "Risk-free trial of five distinct scent profiles at an accessible price",
+        "source": "website"
+      },
+      {
+        "name": "Bespoke Scent Consultation",
+        "description": "Personalized fragrance profile matching based on individual taste preferences, lifestyle, and occasion needs.",
+        "target_industry": "Lifestyle & Personal Styling",
+        "target_customer": "Shoppers seeking guidance on signature fragrances",
+        "main_benefit": "Takes the guesswork out of ordering fragrances online",
+        "source": "inferred"
+      },
+      {
+        "name": "Corporate & Event Fragrance Gifting",
+        "description": "Custom-packaged luxury perfume sets and discovery kits for weddings, executive gifting, and corporate events.",
+        "target_industry": "Corporate Gifting & Event Planning",
+        "target_customer": "Corporate HR managers, wedding hosts, and event planners",
+        "main_benefit": "Distinctive, high-perceived-value gifts tailored for recipients",
+        "source": "inferred"
+      },
+      {
+        "name": "Refill & Subscription Program",
+        "description": "Automated delivery service providing seasonal restocks or travel refills of favorite signature perfumes.",
+        "target_industry": "Subscription E-Commerce",
+        "target_customer": "Loyal, regular perfume wearers",
+        "main_benefit": "Uninterrupted supply of everyday signature scents at preferential rates",
+        "source": "inferred"
+      }
+    ],
+    "target_audience": {
+      "primary_audience": [
+        "Young working professionals seeking signature luxury scents",
+        "Fragrance enthusiasts interested in layered perfume notes"
+      ],
+      "secondary_audience": [
+        "Gift buyers looking for elegant presents",
+        "Travelers needing compact mini perfume vials"
+      ],
+      "industries": [
+        "Personal Care & Cosmetics",
+        "Fashion & Lifestyle",
+        "Corporate Gifting"
+      ],
+      "business_types": [
+        "Direct-to-Consumer E-Commerce",
+        "Independent Perfume Houses"
+      ],
+      "customer_profiles": [
+        "Style-conscious urban consumer in Pakistan aged 20-40",
+        "Cautious online shopper who values sampler kits and cash on delivery"
+      ],
+      "geographic_focus": "Pakistan (nationwide delivery)",
+      "customer_needs": [
+        "Long-lasting fragrances that project well",
+        "Risk-free ways to test scents online before buying full bottles",
+        "Secure and trustworthy domestic payment options like cash on delivery"
+      ],
+      "customer_challenges": [
+        "Inability to smell fragrances before purchasing over the internet",
+        "Frequent disappointment with quick-fading mass-market perfumes",
+        "High cost of imported designer fragrances"
+      ],
+      "customer_interests": [
+        "Fragrance layering and note composition",
+        "Personal grooming and luxury lifestyle",
+        "Indie and artisanal beauty brands"
+      ],
+      "marketing_segments": [
+        {
+          "audience": "Blind-buy hesitant shoppers",
+          "business_type": "Direct-to-Consumer",
+          "requirement": "Affordable tester kits to evaluate scents at home before buying full bottles."
+        },
+        {
+          "audience": "Value-driven luxury fragrance lovers",
+          "business_type": "Direct-to-Consumer",
+          "requirement": "Artisan-grade Eau de Parfum with high longevity without designer markups."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Search volumes and rankings are not included because no search-volume data source is connected.",
+    "Services marked 'inferred' are AI recommendations, not services named on the website.",
+    "Estimated cost uses standard paid list prices; actual charges depend on the provider account tier and may differ."
+  ],
+  "meta": {
+    "provider": "gemini",
+    "model": "gemini-3.8-flash",
+    "input_tokens": 2085,
+    "output_tokens": 3993,
+    "estimated_cost_usd": 0.016538,
+    "llm_calls": 1,
+    "llm_time_seconds": 35.57,
+    "total_time_seconds": 59.666,
+    "pages_analyzed": [
+      "https://scenvora.com/",
+      "https://scenvora.com/products?sort=newest",
+      "https://scenvora.com/products?family=Floral%20Fruity"
+    ],
+    "content_characters_sent": 3882,
+    "cached": false
+  }
+}
