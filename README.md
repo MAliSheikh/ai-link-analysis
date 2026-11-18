@@ -81,7 +81,7 @@ Claude fallback is optional. When you do not have an Anthropic API key, leave `L
 
 ```bash
 # 1. Get the code
-git clone https://github.com/MAliSheikh/Practical-Test.git
+git clone https://github.com/MAliSheikh/ai-link-analysis.git
 cd ai-link-analysis
 
 # 2. Create a virtual environment (venv)
